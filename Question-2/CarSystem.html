@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car System</title>
+    <link rel="stylesheet" href="CarSyestem.css">
+    <link rel="stylesheet" href="CarSystem.js">
+</head>
+
+<body>
+
+    <!-- linking js file -->
+    <script src="CarSystem.js"></script>
+
+    <!-- lnking php file-->
+    <?php include 'CarSystem.php'; ?>
+
+    <section class="heading">
+        <h1 class="heading-text">Car Inventory System</h1>
+    </section>
+    <!-- car form starts here  -->
+
+    <section class="form-condition">
+        <h2 class="car-type">Select The Car Type:</h2>
+        <input class="electric-car" type="radio" name="formOption" value="option1" onchange="showForm(this.value)">
+        Electric
+        <input class="gas-car" type="radio" name="formOption" value="option2" onchange="showForm(this.value)"> Gas
+
+    </section>
+    <!-- creting form for Electric car  -->
+
+
+    <div class="electric-car-form">
+        <form id="form1" style="display: none;" action="CarSystem.php" method="POST">
+            <h2>Elecic Car Details:</h2>
+            <input type="hidden" name="formOption" value="option1">
+
+            <label for="car-name">Enter Car Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="car-name">Enter Car Model:</label>
+            <input type="text" name="model" required>
+
+            <label for="car-name">Enter Year:</label>
+            <input type="text" name="year" required>
+
+            <label for="car-name">Enter Battery Capacity (kWh):</label>
+            <input type="text" name="battery" required>
+
+            <div>
+                <button class="btn">Submit Form</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- creting form for Gas car  -->
+
+    <div class="gas-car-form">
+        <form id="form2" style="display: none;" action="CarSystem.php" method="POST">
+            <h2>Gas Car Details:</h2>
+
+             <input type="hidden" name="formOption" value="option2">
+
+            <label for="car-name">Enter Car Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="car-name">Enter Car Model:</label>
+            <input type="text" name="model" required>
+
+            <label for="car-name">Enter Year:</label>
+            <input type="text" name="year" required>
+
+            <label for="car-name">Enter Fuel Efficiency (MPG): </label>
+            <input type="text" name="fuel" required>
+
+            <div>
+                <button class="btn">Submit Form</button>
+            </div>
+
+        </form>
+    </div>
+
+
+    <!-- car form ends here  -->
+
+
+</body>
+
+</html>
