@@ -4,13 +4,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $model = $_POST['model'];
     $year = $_POST['year'];
 
-    // Database connection
+  
     $conn = new mysqli('localhost', 'root', '', 'form');
     if ($conn->connect_error) {
         die("Connection Failed: " . $conn->connect_error);
     }
 
-    // Check the car type and process accordingly
+  
     if (isset($_POST['formOption'])) {
         $carType = strtolower(trim($_POST['formOption']));
 
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
-        // Execute the statement
+       
         $execval = $stmt->execute();
 
         if ($execval) {
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Error: " . $stmt->error;
         }
 
-        // Close the connection
+        
         $stmt->close();
     } else {
         echo "Car type not set.";
